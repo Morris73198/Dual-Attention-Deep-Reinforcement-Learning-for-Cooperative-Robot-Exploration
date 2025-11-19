@@ -22,33 +22,8 @@ eigen_include_dirs = [
 
 ext_modules = [
     Extension(
-        "one_robot_cnndqn.utils.inverse_sensor_model",
-        ["one_robot_cnndqn/utils/inverse_sensor_model.cpp"],
-        
-        include_dirs=[
-            get_pybind_include(),
-            get_pybind_include(user=True),
-            *eigen_include_dirs  # Use our enhanced list of Eigen paths
-        ],
-        language='c++'
-    ),
-
-
-    Extension(
         "two_robot_dueling_dqn_attention.utils.inverse_sensor_model",
         ["two_robot_dueling_dqn_attention/utils/inverse_sensor_model.cpp"],
-        include_dirs=[
-            get_pybind_include(),
-            get_pybind_include(user=True),
-            *eigen_include_dirs
-        ],
-        define_macros=[('_USE_MATH_DEFINES', None)],
-        language='c++'
-    ),
-
-    Extension(
-        "two_robot_cnndqn_attention.utils.inverse_sensor_model",
-        ["two_robot_cnndqn_attention/utils/inverse_sensor_model.cpp"],
         include_dirs=[
             get_pybind_include(),
             get_pybind_include(user=True),
